@@ -1,27 +1,25 @@
 # TunnelMC
 
-TunnelMC allows Minecraft Java Edition Players to join and play Minecraft Bedrock Edition servers
+TunnelMCはJava EditionのプレイヤーがBedrock Editionのサーバーに入り、プレイすることを可能にします。
 
-# How does it work
-Firstly TunnelMC is a [Fabric Mod](https://fabricmc.net/). What we do is we open a connection to a Minecraft Bedrock server and translate any incoming and outgoing packets, so they can be read by both Editions.
+# 機能
+TunnelMCは[Fabric Mod](https://fabricmc.net/)です。私たちは、Minecraft Bedrockサーバーへの接続を開き、送信パケットと受信パケットを変換し、Java Edition、Bedrock Editionの双方で読み取れるようにしています。
 
-# Why a Fabric Mod and not a Proxy
-Well we love fabric ❤️, also making it a mod instead of a proxy allows us to do some stuff we normally could not do. Such as skins, we read the skins from the bedrock server instead of [Minecraft.net](https://minecraft.net/) this would not be possible without some sort of mod. Also *technically* we could add emotes and other stuff Minecraft Java Edition does not have. Granted we probably wont add emotes but we *could*.
+# なぜプロキシではなくFabric Modなのか
+えぇ、私たちはFabricを愛しています❤️(翻訳者:ここでいう"私たち"は、おそらくこのプロジェクトを立ち上げた、[THEREALWWEFAN231](https://github.com/THEREALWWEFAN231)、[Camotoy](https://github.com/Camotoy)、[JustTalDevelops](https://github.com/JustTalDevelops)、[Cy4Shot](https://github.com/Cy4Shot)の4人のことだと思います)。プロキシではなくModにすることで、より多くのことができるようになります。例えば、スキンは[Minecraft.net](https://minecraft.net/)の代わりに、Bedrockサーバーから読み込みます。これは、何らかのModがなければ不可能です。また、*技術的*にはMinecraft Java Editionにはない、エモートなどの機能を追加することも可能です。きっと、エモートを追加することはありませんが、やろうと思えば*できます*。
+# 何が追加されたのか
+ええ、それは正しい質問ではありません。私たちは最近開発を開始したばかり(書かれた当時)で、本当の問題は何を追加したかということです。
+- オフラインサーバー認証(bedrock専用サーバーでは機能しませんが、nukkitでは機能します)
+- 基本チャンク変換
+- ブロック変換([ガイザーマッピング](https://github.com/GeyserMC/mappings)に感謝。まだ、少し作業が必要ですが、多くはガイザーマッピングを利用すればすぐに終わりそうです。
+- スキン(一般的には機能していますが、レイヤーは機能していないようです)
+- チャット
+- 泳ぎのアニメーション
 
-# What is left to add
-Yeah well, thats not the correct question to ask, we just recently started development and the real question is what have we added.
-- Offline server authentication(does not work with bedrock dedicated server, but does with nukkit)
-- Basic chunk translation
-- Block translation(thanks to [Geysers' mappings](https://github.com/GeyserMC/mappings), still needs a little work, but its generally there
-- Spawning of players
-- Skins(generally working, layers seem to not work)
-- Chat
-- Swinging animation
+# 貢献する
+このプロジェクトを支援したい、または支援を試みたいのですが、どうすればよいのですか? プロジェクトのセットアップは、Eclipseの他の[Fabric Mod](https://fabricmc.net/)と同じです。gradlew genSourcesコマンドを実行してから、gradlew eclipseを実行し、それを既存のプロジェクトとしてEclipseにインポートする必要があります。 別のIDEを使用している場合は、[Fabric Wiki](https://fabricmc.net/wiki/tutorial:setup)を参照してください。
 
-# Contributing
-I'd like to help or try to help, where do I start? Setting up the project is just like any other [Fabric Mod](https://fabricmc.net/) for eclipse you need to run the gradlew genSources command, then gradlew eclipse, then import it as an existing project into eclipse, if your using another IDE please look at the [Fabric Wiki](https://fabricmc.net/wiki/tutorial:setup).
-
-Also it would be appreciated if you coded in this style
+また、このスタイルでコーディング(コードを記入すること)していただけると幸いです。
 ```java
 if(x) {
   doSomething();
@@ -34,7 +32,7 @@ x.forEach(new Consumer<X>() {
   }
 });
 ```
-rather then
+むしろ、その後
 ```java
 if(x)
   doSomething();
@@ -42,23 +40,37 @@ x.forEach((x) -> {
   doSomething();
 });
 ```
-Also if you have any knowledge on xbox live/the api it would be cool if you added xbox live authentication and or joining worlds from invites.😎
+また、xbox Live/aipなどに関する知識があれば、xbox認証を追加したり、招待からワールドに参加してみてもいいでしょう。😎
 
-# Credits
-This generally would not be possible without some open source projects, wheather its just looking how thing works inorder to reverse translate them, looking at their code to see how thing work, and or copying a little bit of their code. We apperiate all these projects.
+# クレジット
+このプロジェクトは、いくつかのオープンソースプロジェクトの引用をしなければ作成は不可能です。逆変換するために動作を調べたり、コードを調べて動作を確認したり、コードを少しコピーしたりする必要があります。 私たちはこれらすべてのプロジェクトをここに示します。
 - [Protocol](https://github.com/CloudburstMC/Protocol)
 - [Nukkit](https://github.com/CloudburstMC/Nukkit)
 - [Geyser](https://github.com/GeyserMC/Geyser)
 - [gophertunnel](https://github.com/Sandertv/gophertunnel)
 
-# How can I try it
-You currently can not, we are still in development and a lot has not been added yet.
+# 使用方法
+現在、開発中であり、まだ多くの機能が追加されていません。(翻訳者:どうしてもやりたかったら公式Discordに来るといいよ!)
 
 # [Discord](https://discord.gg/qH6GqxW)
-We might post some screen shots or information about TunnelMC in there, or if you'd like to help out, you can join and we can see whats crackin.
+(翻訳者:絶対Discord来たほうがいい)Discordでは、TunnelMCやその代わりになりそうなプロジェクトなどの情報を入手できます。また、このプロジェクトに協力したい場合はぜひ来てください。crakin.kk(翻訳者:crakin.kkってなんや!って翻訳してて思ったw)の内容を確認できます。
 
-# Pictures
-This is a picture of the Java Edition on a Bedrock Edition server
+# 画像
+これは、Java EditionでBedrock Editionのサーバーに参加している時の画像です。
 ![](/pictures/JavaEdition.png)
-This is a picture of what it looks like on the Bedrock Edition
+これは、Bedrock EditionのプレイヤーからJava Editionのプレイヤーを見た時の画像です。
 ![](/pictures/Windows10Edition.png)
+
+# 開発者のGitHubプロフィールへのリンク
+[THEREALWWEFAN231](https://github.com/THEREALWWEFAN231)
+[Camotoy](https://github.com/Camotoy)
+[JustTalDevelops](https://github.com/JustTalDevelops)
+[Cy4Shot](https://github.com/Cy4Shot)
+[Flonja](https://github.com/Flonja)
+
+# 翻訳者から
+(書かれた当時)は翻訳した当時では無く、原文が書かれた当時のことをさしています。
+(書かれた当時)や(翻訳者:)などは、[原文](https://github.com/THEREALWWEFAN231/TunnelMC)や[私がフォークしたプロジェクト](https://github.com/Flonja/TunnelMC)には書かれていない内容で、私が勝手に追加したものです。
+また、一部[Google翻訳](https://translate.google.com/)を使用して翻訳しました。
+このプロジェクトは、1.16で開発が止まっているため、1.19に更新されている[こちらのプロジェクト](https://github.com/Flonja/TunnelMC)からフォークしました。
+私には、Javaの知識はほとんど無いのですが、頑張って最新版に対応させたいので協力者を募集しています。協力してくれる方は、ぜひDiscordの方に来てU5KUNを呼んでください。
